@@ -1,0 +1,139 @@
+@mixin flex($fDir,$jCon,$fWrap,$aItm) {
+    display: flex;
+    @if $fDir != null {
+        flex-direction: $fDir;
+    }  
+    @if $jCon != null {
+        justify-content: $jCon;
+    }
+    @if $fWrap != null {
+        flex-wrap: $fWrap;
+    }  
+    @if $aItm != null {
+        align-items: $aItm;
+    }
+}
+
+@mixin  text($fFamily,$fSize,$transform,$decoration,$color,$fWeight,$lHeigth){
+    font-family: $fFamily;
+    font-size: $fSize;
+    text-transform: $transform;
+    text-decoration: $decoration;
+    color: $color;
+    font-weight: $fWeight;
+    line-height: $lHeigth;
+}
+
+@mixin  position($pos,$top,$right,$bottom,$left,$zIndex) {
+    position: $pos;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+    z-index: $zIndex;
+}
+
+@mixin center($position) {
+    position: absolute;
+    @if $position == 'vertical' {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    @else if $position == 'horizontal' {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    @else if $position == 'both' {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+}
+
+@mixin img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+@mixin  bg {
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+@mixin font-face($font-name, $file-name, $weight: normal, $style: normal) {
+    @font-face {
+      font-family: "#{$font-name}";
+      src: url($file-name + '.eot');
+      src: url($file-name + '.eot?#iefix')  format('embedded-opentype'),
+      url($file-name + '.woff') format('woff'),
+      url($file-name + '.woff2') format('woff2'),
+      url($file-name + '.ttf')  format('truetype');
+      font-weight: $weight;
+      font-style: $style;
+    }
+}
+
+@mixin  on($adress) {
+    content: "";
+    height: 215px;
+    width: 15px;
+    background: url($adress);
+    @include bg;
+    @include center('vertical');
+    right: 30px;
+}
+
+@mixin  lines {
+    content: "";
+    height: 130px;
+    width: 10px;
+    background: url(../img/lines.png);
+    @include bg;
+    @include center('horizontal');
+    top: -63px;
+    z-index: 3;
+}
+
+@mixin arrows {
+    width: 91px;
+    height: 14px;
+    border: none;
+    font-size: 0;
+    @include bg;
+}
+
+@mixin number {
+    @include text($muller,200px,none,none,$white,900,180px);
+    text-shadow: 0 0 20px $interShadow ;
+}
+
+@mixin  formInput {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid $white;
+    @include text($openS,14px,none,none,$white,700,null);
+    &::placeholder{
+        @include text($openS,14px,none,none,$white,400,null);
+        font-style: italic;
+    }
+}
+
+@mixin formSubmit {
+    padding: 15px 0;
+    border: none;
+    background-color: $headerLink;
+    border-radius: 30px;
+    @include text($openS,16px,uppercase,none,$white,700,null);
+    letter-spacing: 1px;
+}
+
+@mixin  link {
+    display: inline-block;
+    padding: 16px 0;
+    background-color: $headerLink;
+    @include text($openS,16px,uppercase,none,$white,700,null);
+    letter-spacing: 1px;
+    text-align: center;
+    border-radius: 30px;
+}

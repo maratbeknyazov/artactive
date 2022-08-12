@@ -1,0 +1,46 @@
+.card-list{
+  .card{
+    margin: 0 auto;
+  }
+
+  .slick-arrow{
+    @include arrows;
+    @include position(absolute,null,null,-46px,null,null);
+  }
+  .slick-prev{
+    background: url(../img/arrowPrev.png);
+    left: 30px;
+  }
+  .slick-next{
+    background: url(../img/arrowNext.png);
+    right: 30px;
+  }
+}
+
+
+@media only screen and (min-width:768px){
+  .card-list{
+    .card{
+      margin: 0 auto; 
+    }
+  }
+}
+
+
+@media only screen and (min-width:1200px){
+  .card-list{
+    &__image{
+      margin: 0 auto;
+    }
+    &__text{
+      text-align: center;
+    }
+    .slick-arrow{
+      @include arrows;
+      @include position(absolute,null,null,-46px,null,null);
+    }
+    .slick-next{
+      left: 150px;
+    }
+  }
+}

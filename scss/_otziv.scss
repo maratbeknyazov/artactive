@@ -1,0 +1,146 @@
+.review{
+    padding: 24px 0 110px 0;
+}
+
+.review-container{
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.review-title{
+    display: none;
+}
+
+.review-slider-block{
+    margin: 10px 5px;
+    padding: 60px 20px 52px 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px 0 $shadow;
+    max-width: 100%;
+}
+
+.review-slider-block-inner-photo{
+    margin-bottom: 49px;
+    img{
+        @include img;
+        margin: 0 auto;
+    }
+}
+
+.review-slider-block-inner-info__text{
+    @include text($openS,14px,none,none,$black,400,24px);
+}
+
+.review-slider-block-inner-info__name{
+    margin: 45px 0 0 0;
+    @include text($openS,16px,none,none,$black,600,30.1px);
+}
+
+.review-slider-block-inner-info__link{
+    @include text($openS,14px,none,none,$otzivLink,600,null);
+}
+
+.review-slider .slick-prev{
+    background: url(../img/arrowPrev.png);
+    left: 30px;
+}
+
+.review-slider .slick-next{
+    background: url(../img/arrowNext.png);
+    right: 30px;
+}
+
+.review-slider .slick-arrow{
+    @include arrows;
+    @include position(absolute,null,null,-46px,null,null);
+}
+
+
+@media only screen and (min-width:768px){
+    .review{
+        padding: 75px 0 130px 0;
+    }
+    .review-title{
+        display: block;
+        margin-bottom: 45px;
+    }
+
+    .review-container{
+        max-width: 730px;
+    }
+
+    .review-slider{
+         max-width: 100%;
+    }
+
+    .review-slider-block{
+        padding: 62px 65px 59px 64px;
+       
+    }
+
+    .review-slider-block-inner{
+        @include flex(row,space-between,nowrap,null);
+    }
+
+    .review-slider-block-inner-photo{
+        flex-basis: 140px;
+        margin: 0;
+        padding-top: 9px;
+    }
+
+    .review-slider-block-inner-info{
+        flex-basis: 403px;
+    }
+
+    .review-slider-block-inner-info__name{
+        margin: 9px 0 0 0;
+    }
+
+    .review-slider .slick-prev{
+        left: 0;
+    }
+    
+    .review-slider .slick-next{
+        left: 150px;
+    }
+}
+
+
+@media only screen and (min-width:1200px){
+    .review{
+        padding: 133px 0 168px 0;
+    }
+
+    .review-title{
+        margin-bottom: 65px;
+    }
+
+    .review-container{
+        max-width: 1366px;
+    }
+
+    
+    .review-slider .slick-track{
+       padding: 0 100px;
+       margin: 0;
+    }
+
+    .review-slider-block{
+        max-width: 848px;
+        margin: 10px 12px;
+        padding: 55px 84px 59px 75px;
+        max-width: 100%;
+    }
+
+    .review-slider-block-inner-info{
+        flex-basis: 510px;
+    }
+
+    .review-slider .slick-prev{
+        left: 50px;
+    }
+    
+    .reviev-slider .slick-next{
+        left: 300px;
+    }
+}

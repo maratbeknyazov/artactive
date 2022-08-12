@@ -1,0 +1,161 @@
+.uslug {
+  background-color: $uslugBg;
+}
+
+.uslug-inner {
+  position: relative;
+  padding: 68px 0 70px 0;
+}
+
+.uslug-inner-number {
+  @include number;
+  color: #faf8fb;
+  @include position(absolute, 119px, null, null, 30px, 1);
+}
+
+.uslug-inner-info-head {
+  @include text($muller, 24px, none, none, $black, 500, null);
+  margin: 43px 0 48px 0;
+  position: relative;
+  z-index: 2;
+}
+
+.uslug-inner-info-list {
+  // margin-bottom: 35px;
+  list-style: none;
+  @include text($openS, 14px, none, none, $faqText, 400, 24px);
+  text-indent: 8px;
+  li {
+    position: relative;
+    &:before {
+      content: "";
+      @include position(absolute, 10px, null, null, 0, null);
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background-color: $faqText;
+    }
+  }
+}
+
+.uslug-inner-info-ques {
+  display: none;
+}
+
+.uslug-inner-ques {
+  margin-top: 350px;
+  padding: 34px 22px 30px 22px;
+  box-shadow: 0 20px 20px 0 $faqFormShadow;
+  background-color: $uslugLinkBg;
+  border-radius: 10px;
+}
+
+.uslug-inner-ques-block__title {
+  @include text($openS, 13px, none, none, $white, 400, null);
+  font-style: italic;
+}
+
+.uslug-inner-ques-block__head {
+  @include text($openS, 16px, none, none, $white, 600, null);
+  margin: 10px 0 32px 0;
+}
+
+.uslug-inner-ques-link__el {
+  @include link;
+  width: 100%;
+  padding: 13px 0;
+  letter-spacing: 1px;
+}
+
+// uslug-slider begin
+.uslug-inner-slider {
+  margin-top: 39px;
+}
+
+.uslug-container {
+  max-width: 100%;
+  position: relative;
+}
+
+@media screen and (min-width: 768px) {
+  .uslug-inner {
+    padding: 78px 0 440px 0;
+
+    &:before {
+      @include lines;
+      left: 50%;
+    }
+  }
+  &-ques {
+    @include flex(row, space-between, nowrap, baseline);
+    padding: 33px 33px 36px 36px;
+    @include position(absolute, null, 0, -265px, unset, null);
+    width: 100%;
+  }
+
+  &-info-head {
+    margin: 53px 0 62px 0;
+    font-size: 32px;
+  }
+
+  &-ques-block {
+    flex-basis: 330px;
+    @include flex(row, space-between, nowrap, null);
+  }
+
+  .uslug-inner-ques-link {
+    flex-basis: 251px;
+  }
+
+  .uslug-inner-ques-block__head {
+    margin: 0;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .uslug-inner {
+    @include flex(row, space-between, wrap, null);
+    padding: 100px 0 184px 0;
+  }
+
+  .uslug-inner-number {
+    @include position(absolute, 170px, null, null, -78px, -1);
+  }
+
+  .uslug-inner-info {
+    flex-basis: 40%;
+    width: 100%;
+  }
+
+  .uslug-inner-info-head {
+    margin: 80px 0 48px 0;
+  }
+
+  .uslug-inner-info-ques {
+    flex-basis: 100%;
+    display: block;
+    margin-top: 72px;
+    padding: 36px 37px;
+    background-color: $uslugLinkBg;
+    border-radius: 10px;
+    @include flex(row, space-between, nowrap, null);
+  }
+
+  .uslug-inner-ques-block {
+    display: block;
+  }
+
+  .uslug-inner-ques-block__title {
+    margin-bottom: 8px;
+  }
+
+  .uslug-inner-ques {
+    display: none;
+  }
+
+  .uslug-inner-slider {
+    flex-basis: 50%;
+    padding-top: 45px;
+    max-width: 50%;
+  }
+}

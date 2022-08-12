@@ -1,0 +1,161 @@
+// poligraf
+
+.poligraf{
+    background-color: $uslugBg;
+}
+
+.poligraf-inner{
+    position: relative;
+    padding: 70px 0 60px 0;
+
+    &-number{
+        @include number;
+        color: #faf8fb;
+        @include position(absolute,39px,null,null,36px,1);
+    }
+    
+    &-info__head{
+        position: relative;
+        z-index: 2;
+        @include text($muller,24px,none,none,$black,500,null);    
+        margin-bottom: 50px;
+    }
+    
+    &-info-text{
+        @include text($openS,14px,none,none,$faqText,400,24px);    
+        p:nth-child(1){
+            margin-bottom: 24px;
+        }
+    }
+}
+
+
+.poligraf-inner-photo{
+    margin-top: 23px;
+    img{
+        @include img;
+    }
+}
+
+.poligraf-inner-form{
+    margin-top: 41px;
+    form{
+        @include flex(row,space-between,wrap,flex-end);
+    }
+}
+
+.poligraf-inner-form__title,
+.poligraf-inner-form__text{
+    @include text($openS,16px,none,none,$black,600,30.1px);
+}
+
+.poligraf-inner-form__title{
+    font-style: italic;
+    font-weight: 300;
+}
+
+.poligraf-inner-form__text{
+    max-width: 200px;
+    font-size: 20px;
+    margin-bottom: 21px;
+}
+
+.poligraf-inner-form__in{
+    flex-basis: 100%;
+    background-color: transparent;
+    padding: 9px 15px;
+    border: none;
+    border-bottom: 1px solid $poligrafBorder;
+    @include text($openS,14px,none,none,$poligrafText,700,null);
+    &::placeholder{
+        @include text($openS,14px,none,none,$poligrafText,400,null);
+        font-style: italic;
+    }
+    
+    &:nth-child(2){
+        margin: 20px 0 34px 0;
+    }
+}
+
+.poligraf-inner-form__sub{
+    flex-basis: 100%;
+    letter-spacing: 2px;
+    @include formSubmit;
+}
+
+
+
+@media screen and (min-width:768px){
+    
+    .poligraf-inner{
+        padding: 110px 0 118px 0;
+        &:before{
+            @include lines;
+        }
+    }
+
+    .poligraf-inner-number{
+        top: 70px;
+        left: 35px;
+    }
+
+    .poligraf-inner-info__head{
+        font-size: 32px;
+        max-width: 440px;
+    }
+
+
+    .poligraf-inner-photo{
+        @include position(absolute,418px,0px,null,null,1);
+        width: 453px;
+    }
+
+    .poligraf-inner-form{
+        max-width: 241px;
+        margin-top: 80px;
+    }
+}
+
+@media screen and (min-width:1200px){
+    .poligraf-inner{
+        padding: 140px 0 160px 0;
+        
+        &-number{
+            @include position(absolute,98px,null,null,-80px,1);
+        }
+    
+        &-info{
+            max-width: 560px;
+        }
+    
+        &-form{
+            margin-top: 105px;
+            max-width: 763px;
+            form{
+                flex-wrap: nowrap;
+            }
+        }
+    }
+
+
+    .poligraf-inner-form__in{
+        flex-basis: 240px;
+        &:nth-child(2){
+            margin: 0;
+        }
+    }
+
+    .poligraf-inner-form__sub{
+        flex-basis: 195px;
+    }
+
+    .poligraf-inner-form__text{
+        max-width: 100%;
+    }
+
+    .poligraf-inner-photo{
+        width: 50%;
+        top: -30px;
+        left: 590px;
+    }
+}

@@ -1,0 +1,125 @@
+.footer{
+
+    &-map{
+        position: relative;
+    }
+
+    .map{
+        width: 100%;
+        height: 140vh;
+    }
+
+    &-card{
+        background-color: #fff;
+        width: 94%;
+        border-radius: 20px;
+        padding: 40px 10px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        text-align: center;
+    }
+    &__icon{
+        margin: 20px 0;
+        text-align: center;
+    }
+    &-end{
+        background-color: $faqForm;
+        color: $footerText;
+        text-align: center;
+        padding: 20px 0;
+        
+        p{
+            &:nth-child(1){
+                display: none;
+            }
+        }
+        span{
+            text-decoration: underline;
+        }
+    }
+    &__icon{
+        display: flex;
+        i{
+            color: blue;
+        }
+    }
+}
+
+
+@media only screen and (min-width:768px){
+    .footer{
+        &-map{
+            &:before {
+                @include lines;
+                left: 50%;
+            }
+        }
+        .map{
+            width: 100%;
+            height: 120vh;
+        }
+    
+        &-card{
+            background-color: #fff;
+            width: 50%;
+            border-radius: 20px;
+            padding: 60px 40px;
+            left: 30%;
+        }
+        &-end{
+            background-color: $faqForm;
+            color: $footerText;
+            text-align: center;
+            display: flex;
+            justify-content: space-around;
+            flex-direction: row-reverse;
+            p{
+                &:nth-child(1){
+                    display: none;
+                }
+            }
+        }
+        
+    }  
+} 
+
+
+@media screen and (min-width:1200px){
+    .footer{
+
+        // &-map{
+        //     @include lines;
+        // }
+
+        .map{
+            width: 100%;
+            height: 120vh;
+            border: none;
+        }
+    
+        &-card{
+            background-color: #fff;
+            width: 35%;
+            height: 45%;
+            border-radius: 20px;
+            padding: 60px;
+            left: 25%;
+        }
+        &-end{
+            background-color: $faqForm;
+            color: $footerText;
+            text-align: center;
+            display: flex;
+            justify-content: space-around;
+            flex-direction: row-reverse;
+            p{
+                &:nth-child(1){
+                    display: block;
+                }
+            }
+        }
+        
+    }     
+}

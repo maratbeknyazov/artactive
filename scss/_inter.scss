@@ -1,0 +1,117 @@
+.inter{
+    position: relative;
+    padding: 71px 0 251px 0;
+}
+
+.inter-inner{
+    @include flex(row,flex-start,nowrap,null);
+}
+
+.inter-number{
+    @include position(absolute,40px,null,null,50px,-1);
+    @include number;
+}
+
+.inter-text__title{
+    @include text($muller,24px,none,none,$black,500,null);
+}
+
+.inter-text__info{
+    @include text($openS,14px,none,none,$faqText,400,24px);
+    margin: 37px 0 43px 0;
+}
+
+.inter-text__link{
+    width: 100%;
+    @include link;
+}
+
+.inter-photo{
+    @include position(absolute,null,0,54px,null,-1);
+    img{
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+.inter-photo__d2,
+.inter-photo__d3{
+    display: none;
+}
+
+
+@media screen and (min-width:768px){
+    .inter{
+        padding: 401px 0 399px 0;
+    }
+
+    .inter-number{
+        top: 360px;
+    }
+
+	.inter-text{
+        flex-basis: 550px;
+    }
+
+    .inter-text__title{
+        font-size: 32px;
+        max-width: 80%;
+    }
+
+    .inter-text__info{
+        margin: 66px 0 50px 0;
+    }
+
+    .inter-text__link{
+        max-width: 242px;
+    }
+
+    .inter-photo__d1{
+        display: none;
+    }
+
+    .inter-photo__d2{
+        display: block;
+    }
+}
+
+
+
+@media screen and (min-width:1170px){
+	.inter{
+        padding: 130px 0 565px 0;
+    }
+
+    .inter-inner{
+        position: relative;
+    }
+
+    .inter-number{
+        @include position(absolute,86px,null,null,50%,-1);
+        transform: translateX(-50%);
+    }
+
+    .inter-inner{
+        justify-content: flex-end;
+    }
+
+    .inter-text{
+        flex-basis: 555px;
+    }
+
+    .inter-text__info{
+        margin: 49px 0 56px 0;
+    }
+
+    .inter-photo{
+        @include position(absolute,null,null,-465px,-272px,-1);
+    }
+
+    .inter-photo__d2{
+        display: none;
+    }
+
+    .inter-photo__d3{
+        display: block;
+    }
+}

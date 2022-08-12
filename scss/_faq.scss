@@ -1,0 +1,166 @@
+.faq{
+    position: relative;
+    padding-bottom: 84px;
+}
+
+.faq-inner{
+    @include flex(row,space-between,wrap,null);
+}
+
+.faq-inner-title{
+    flex-basis: 100%;
+    margin-bottom: 34px;
+}
+
+.faq-inner-block{
+    flex-basis: 100%;
+}
+
+.faq-inner-block_ls{
+    margin: 35px 0 54px 0;
+}
+
+.faq-inner-block-el:nth-child(n+2){
+    margin-top: 42px;
+}
+
+.faq-inner-block-el-head{
+    @include text($openS,20px,none,none,$black,600,null);
+}
+
+.faq-inner-block-el-text{
+    @include text($openS,14px,none,none,$faqText,400,24px);
+    margin-top: 25px;
+}
+
+.faq-inner-form{
+    flex-basis: 100%;
+    padding: 45px 21px 56px 23px;
+    background-color: $faqForm;
+    border-radius: 10px;
+    box-shadow: 0 20px 20px 0 $faqFormShadow;
+    position: relative;
+    overflow: hidden;
+    form{
+        @include flex(row,space-between,wrap,flex-end);
+    }
+
+    &:before{
+        content: "";
+        width: 170px;
+        height: 150px;
+        background: url(../img/formCircle.png);
+        @include bg;
+        @include position(absolute,-45px,-68px,null,null,4);
+    }
+}
+
+.faq-inner-form__title,
+.faq-inner-form__text{
+    @include text($openS,16px,none,none,$white,400,30.1px);
+}
+
+.faq-inner-form__title{
+    font-style: italic;
+}
+
+.faq-inner-form__text{
+    max-width: 70%;
+    font-size: 20px;
+    margin-bottom: 27px;
+    letter-spacing: 1px;
+}
+
+.faq-inner-form__in{
+    flex-basis: 100%;
+    padding: 9px 15px;
+    @include formInput;
+
+    &:nth-child(2){
+        margin: 20px 0 40px 0;
+    }
+}
+
+.faq-inner-form__sub{
+    flex-basis: 100%;
+    z-index: 4;
+    @include formSubmit;
+}
+
+// faq end
+
+@media screen and (min-width:768px){
+    .faq-inner-form{
+        padding: 45px 32px 54px 37px;
+        background: url(../img/faqFormTab.png);
+        @include bg;
+
+        &:before{
+            width: 240px;
+            height: 235px;
+            @include position(absolute,-62px,-20px,null,null,4);
+        }
+
+        form{
+            flex-wrap: nowrap;
+        }
+    }
+
+    .faq-inner-form__text{
+        margin-bottom: 27px;
+    }
+
+    .faq-inner-form__in_b{
+        max-width: 182px;
+    }
+
+    .faq-inner-form__in_s{
+        max-width: 173px;
+    }
+    
+    .faq-inner-form__sub{
+        flex-basis: 192px;
+    }
+
+    .faq-inner-form__in:nth-child(2){
+        margin: 0;
+    }
+}
+
+@media screen and (min-width:1200px){
+    .faq{
+        padding: 0 0 169px 0;
+    }
+
+    .faq-inner-title{
+        margin-bottom: 60px;
+    }
+
+	.faq-inner-block{
+        flex-basis: 550px;
+    }
+    
+    .faq-inner-block_ls{
+        margin: 0 0 64px 0;
+        flex-basis: 555px;
+    }
+
+    .faq-inner-form{
+        padding: 36px 69px 55px 312px;
+        background: url(../img/faqForm.png);
+        @include bg;
+        &:before{
+            width: 240px;
+            height: 220px;
+            @include position(absolute,0,null,null,30px,4);
+        }
+    }
+    
+    .faq-inner-form__text{
+        margin-bottom: 22px;
+    }
+
+    .faq-inner-form__in{
+        max-width: 240px;  
+    }
+}

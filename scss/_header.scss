@@ -1,0 +1,361 @@
+.header{
+    position: relative;
+    background: url(../img/headerBg1.png) no-repeat ;
+    @include bg;
+    padding: 23px 0 65px 0;
+    overflow: hidden;
+    &-block{
+        @include flex(row,space-between,nowrap,center);
+    }
+    
+    //logo
+
+    &-block-logo{
+        a{
+            @include text($openS,18px,uppercase,none,$white,800,0);
+        }
+    }
+}
+
+.header-block__in{
+    display: none;
+    &:checked ~ .header-block__lab{
+        content: '';
+        position: fixed;
+        z-index: 30;
+        
+        .header-burger{
+            span{
+                transform: scale(0);
+            }
+            &::before{
+                transform: rotate(45deg);
+                top: 8px;
+                background-color: cyan;
+            }
+            &::after{
+                transform: rotate(-45deg);
+                bottom: 6px;
+                background-color: cyan;
+            }
+        }
+    }
+    &:checked ~ .header-block-menu{
+        position: fixed;
+        left: 0;
+        z-index: 10;
+    }
+    &:checked ~ html.noscroll{
+        width: 100%;
+        height: 100%;
+        @include position(fixed,0,null,null,0,10);
+        overflow-y: scroll;
+    }
+}
+
+.header-block__lab{
+    position: absolute;
+    top: 23px;
+    right: 15px;
+    width: 24px;
+    height: 16px;
+    z-index: 50; 
+}
+
+.header-burger{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    &::before,&::after{
+        content: '';
+        background-color: #fff;
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        left: 0;
+        transition: 0.3s;
+    }
+    &::before{
+        top: 0;
+    }
+    &::after{
+        bottom: 0;
+    }
+    span{
+        position: absolute;
+        background-color: #fff;
+        width: 100%;
+        height: 2px;
+        top: 7px;
+        transition: 0.3s;
+    }
+}
+
+.header-block-menu{
+    background-color: $white;
+    width: 100%;
+    height: 100vh;
+    @include position(absolute,0,null,null,100%,2);
+    padding: 60px 0;
+    text-align: center;
+    transition: 0.3s all linear;
+}
+
+.header-block-list{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-transform: capitalize;
+    width: 100%;
+    &{
+        list-style: none;
+        li:nth-child(n+2){
+            margin-top: 40px;
+        }
+    }
+    
+    &__item{
+        @include text($openS,13px,uppercase,none,$black,600,null);
+    }
+}
+
+.header-block-menu__tel{
+    display: inline-block;
+    margin: 60px 0 40px 0;
+    @include text($openS,16px,none,none,$black,700,null);
+}
+
+// form
+
+.header-block-menu__in{
+    display: none;
+    &:checked ~ .header-block-menu-form{
+        display: block
+    }
+}
+.header-block-menu-form__in{
+    display: none;
+}
+.header-block-menu-label__sp{
+    @include text($openS,11px,uppercase,none,$headerLink,800,null);
+    letter-spacing: 0.6px;
+    // margin-top: 40px;    
+    padding: 7px 20px;
+    border: 2px solid $headerLink;
+    border-radius: 30px;
+}
+
+.header-block-menu-form{
+    display: none;
+    @include position(absolute,20%,null,null,null,4);
+    @include center('horizontal');
+    background: url(../img/formBG.png);
+    @include bg;
+    text-align: start;
+    border-radius: 10px;
+    width: 300px;
+    padding: 46px 30px 56px 30px;
+
+    form{
+        @include flex(row,flex-start,wrap,null);
+    }
+    &__lab{
+        @include position(absolute,15px,15px,null,null,5);
+        // display: none;
+        i{
+            font-size: 25px;
+            color: $footerText;
+        }
+    }
+    
+    &__title{
+        @include text($openS,16px,none,none,$white,300,30.1px);
+        font-style: italic;
+    }
+    
+    &__text{
+        @include text($openS,20px,none,none,$white,600,30.1px);
+        margin-bottom: 30px;
+    }
+    
+    &__in{
+        flex-basis: 100%;
+        padding: 11px 15px;
+        @include formInput;
+        &:nth-child(2){
+            margin: 28px 0 35px 0;
+        }
+    }
+    
+    &__sub{
+        flex-basis: 100%;
+        @include formSubmit;
+    }
+}
+
+// form-end
+
+.header-inner{
+    @include flex(row,space-between,wrap,null);
+    &-photo{
+        flex-basis: 100%;
+        margin: 5px 0 52px 0;
+        img{
+            @include img;
+        }
+    }
+    
+    &-info{
+        flex-basis: 100%;
+        &__title{
+            @include text($muller,36px,uppercase,none,$white,800,null);
+            max-width: 70%;
+        }
+        
+        &__text{
+            margin: 25px 0 43px 0;
+            @include text($muller,21px,none,none,$white,400,null);
+        }
+    }
+}
+
+.header-inner-info-block{
+    @include flex(row,flex-start,wrap,null);
+    &-button{
+        flex-basis: 100%;
+        @include link;
+    }
+    
+    &__text{
+        flex-basis: 72%;
+        margin-top: 27px;
+        @include text($openS,16px,none,none,$white,300,null);
+    }
+}
+
+// header-end
+
+//header
+
+@media only screen and (min-width:768px){
+    .header{
+        padding-bottom: 80px;
+        background: url(../img/headerBg2.png);
+        @include bg;
+        &:before{
+            content: "";
+            height: 32px;
+            width: 20px;
+            @include center('horizontal');
+            bottom: 40px;
+            background: url(../img/headerBottom.png);
+            @include bg;
+        }
+    }
+}
+
+// header-end
+
+// header
+
+@media only screen and (min-width:1200px){
+    .header{
+        position: relative;
+        background: url(../img/headerBg3.png);
+        background-position: 50% 45%;
+    }
+    .header-nav-logo{
+        a{
+            letter-spacing: 1px;
+        }
+    }
+
+    .header-block-menu{
+        @include flex(row,flex-start,nowrap,null);
+        position: static;
+        background-color: transparent;
+        width: auto;
+        padding: 0;
+        height: auto;
+    }
+
+    .header-block__lab{
+        display: none;
+    }
+
+    .header-block-list{
+        display: inline-block;
+        li{
+            display: inline-block;
+        }
+        li:nth-child(n+2){
+            margin: 70px 30px;
+        }
+    }
+
+    .header-block-list__item{
+        color: $white;
+        letter-spacing: 0.5px;
+    }
+
+    .header-block-menu__tel{
+        width: 150px;
+        margin: 70px 30px;
+        letter-spacing: 0.6px;
+        color: $white;
+    }
+
+    .header-block-menu-label__sp{
+        color: $white;
+        border-color: $white;
+        width: 164px;
+        display: block;
+        margin-top: 60px;
+    }
+
+    .header-block-menu-form{
+        @include position(absolute,20%,null,null,50%,4);
+        transform: translateX(-50%);
+    }
+
+    .header-inner-photo{
+        flex-basis: 540px;
+        min-height: 550px;
+        margin: 92px 0 0 -5px;
+    }
+
+    .header-inner-info{
+        flex-basis: 515px;
+        padding-top: 136px;
+    }
+
+    .header-inner-info__title{
+        font-size: 60px;
+        max-width: 70%;
+        letter-spacing: 3px;
+        line-height: 75px;
+    }
+
+    .header-inner-info__text{
+        font-size: 32px;
+        margin: 35px 0 74px 0;
+        line-height: 38px;
+    }
+
+    .header-inner-info-block__link{
+        flex-basis: 248px;
+        margin-left: -5px;
+    }
+
+    .header-inner-info-block__text{
+        flex-basis: 220px;
+        margin: 0 0 0 30px;
+        line-height: 21px;
+        letter-spacing: 0.5px;
+    }
+}
+
+// header-end
