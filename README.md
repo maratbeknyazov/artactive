@@ -2,5 +2,5 @@
 
 - это простая страница [посмотрите сами]{maratbeknyazov.github.io/artactive/
 }
-- сздана с помощью html, scss, js, jquery
+- создана с помощью html, scss, js, jquery
 - распологает несколько форм для регистраций
