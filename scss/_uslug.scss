@@ -77,6 +77,12 @@
   position: relative;
 }
 
+.card{
+  p{
+    @include text($openS,15px,none,none, #000,700,null);
+  }
+}
+
 @media screen and (min-width: 768px) {
   .uslug-inner {
     padding: 78px 0 440px 0;
@@ -85,22 +91,22 @@
       @include lines;
       left: 50%;
     }
-  }
-  &-ques {
-    @include flex(row, space-between, nowrap, baseline);
-    padding: 33px 33px 36px 36px;
-    @include position(absolute, null, 0, -265px, unset, null);
-    width: 100%;
-  }
-
-  &-info-head {
-    margin: 53px 0 62px 0;
-    font-size: 32px;
-  }
-
-  &-ques-block {
-    flex-basis: 330px;
-    @include flex(row, space-between, nowrap, null);
+    &-ques {
+      @include flex(row, space-between, nowrap, baseline);
+      padding: 33px 33px 36px 36px;
+      @include position(absolute, null, 0, -265px, unset, null);
+      width: 100%;
+    }
+  
+    &-info-head {
+      margin: 53px 0 62px 0;
+      font-size: 32px;
+    }
+  
+    &-ques-block {
+      flex-basis: 330px;
+      @include flex(row, space-between, nowrap, null);
+    }
   }
 
   .uslug-inner-ques-link {

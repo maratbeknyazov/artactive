@@ -23,12 +23,20 @@
     &__icon{
         margin: 20px 0;
         text-align: center;
+        i{
+            font-size: 18px;
+            margin-right: 5px;
+        }
+        p{
+            @include text($openS,15px,none,none, #000,700,null);
+        }
     }
     &-end{
         background-color: $faqForm;
         color: $footerText;
         text-align: center;
         padding: 20px 0;
+        @include text($openS,15px,none,none, $faqForm,700,null);
         
         p{
             &:nth-child(1){
